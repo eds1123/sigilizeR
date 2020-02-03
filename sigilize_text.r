@@ -3,12 +3,11 @@
 # --------------------------------------------- #
 #
 # Takes a text string input
-# TODO Check to validate input is string
+# Validates input
 # Removes vowels and reduces to unique letters only
 # Scrambles into random order
 # Capitalizes and returns as a single concatenated string.
 #
-# TODO validate input is text string first
 # TODO Currently function drops any numbers in string
 # TODO add option to return final output in n number of tokens.
 #
@@ -20,13 +19,17 @@ library(stringr)  # To process text
 
 # Base function
 sigilize_text <- function(input_string) {
-  split_text <- input_string %>%
-    str_remove_all("[aeiou]") %>%
-    strsplit(.,"")
-  sigil_text <- unique(split_text[[1]]) %>%
-    str_extract("[A-z]") %>%
-    sample() %>%
-    str_to_upper() %>%
-    paste(collapse ='')
-  return(sigil_text)
+  if (is.character(input_string)) {
+    split_text <- input_string %>%
+      str_remove_all("[aeiou]") %>%
+      strsplit(.,"")
+    sigil_text <- unique(split_text[[1]]) %>%
+      str_extract("[A-z]") %>%
+      sample() %>%
+      str_to_upper() %>%
+      paste(collapse ='')
+    return(sigil_text)
+  } else {
+    return("Input must be a text string")
+  }
 }
