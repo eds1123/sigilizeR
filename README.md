@@ -7,27 +7,28 @@ This is my first attempt doing any kind of R/Shiny for use other than just my ow
 ## Ideas to build up complexity
 
 1. Basic text sigilizer
-    a. Add tokenizing of output
-    b. Add output variant as sentence made from available uniques.
+    - Add tokenizing of output
+    - Add output variant as sentence made from available uniques.
 2. Text -> Bind patterns  // How to combine?  Trace vectorlines and join?
 3. Adjusting text layouts
-    a. fixed paths (e.g. circles, penta/hexagrams) // expand to fit, or repeat, scale&rep?
-    b. user defined path // secondary input effectively?
+    - fixed paths (e.g. circles, penta/hexagrams) // expand to fit, or repeat, scale&rep?
+    - user defined path // secondary input effectively?
 4. Vocalizaion suited outputs // adding vowels back in, vowel led options
 5. Add different input options
-    a. sentence/text strings
-    b. different languages
-    c. runes etc.
-    d. pictures/images
+    - sentence/text strings
+    - different languages
+    - runes etc.
+    - pictures/images as intent input
+    - pictures/images as path output
 6. Add conversion methods
 7. Experiment with audio input/output - looped
 8. Shiny web interface for public access
 9. Increase Entropy
-    a. Add randomizer into how many of each character are kept
-    b. Add random token number
-    c. Add random token length
-    d. use sample(1:10,size = 1)
-    e. use random seed
+    - Add randomizer into how many of each character are kept
+    - Add random token number
+    - Add random token length
+    - use sample(1:10,size = 1)
+    - use random seed
 
 ### Proposed function layout
 
