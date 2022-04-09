@@ -13,6 +13,7 @@
 #
 # --------------------------------------------- #
 
+library(maggritr)
 library(stringr)  # To process text
 library(runes)  # For conversion to Nordic runes when specified.
 
