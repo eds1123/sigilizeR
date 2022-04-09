@@ -36,7 +36,9 @@ app <- shinyApp (
     source("../sigilize_text.R")
     output$sigil_output <- sigilize_text(input$sigil_input)
   }
+  # No runApp?
 )
+
   
 
 
