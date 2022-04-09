@@ -28,15 +28,15 @@ sigilize_text <- function(input_string, convert = NULL) {
   # first validate input
   if (is.character(input_string)) {
     # remove vowels and convert to vector
-    split_text <- input_string |>
-      str_remove_all("[aeiou]") |>
+    split_text <- input_string %>%
+      str_remove_all("[aeiou]") %>%
       strsplit("")
     # only keep unique letters and remove spaces
-    sigil_text <- unique(split_text[[1]]) |>
-      str_extract("[A-z]") |>
-      .[!is.na(.)] |>
+    sigil_text <- unique(split_text[[1]]) %>%
+      str_extract("[A-z]") %>%
+      .[!is.na(.)] %>%
       # randomize order of characters
-      sample() |>
+      sample() %>%
       # concatenate as uppercase
       str_to_upper()
     # parse convert argument
@@ -53,35 +53,35 @@ sigilize_text <- function(input_string, convert = NULL) {
 }
 
 
-else if (convert == "numbers") {
-  sigil_output <- sigil_text
-}
-    # if option is specified, convert output before printing
-    if (convert = "numbers") {
-      return(sigil_output)
-    } else if (convert = "runes") {
-      sigil_output <- runes(sigil_text)
-      return(sigil_output)
-    } else {
-      sigil_output <- sigil_text
-      return(sigil_output)
-    }
+# else if (convert == "numbers") {
+#   sigil_output <- sigil_text
+# }
+#     # if option is specified, convert output before printing
+#     if (convert = "numbers") {
+#       return(sigil_output)
+#     } else if (convert = "runes") {
+#       sigil_output <- runes(sigil_text)
+#       return(sigil_output)
+#     } else {
+#       sigil_output <- sigil_text
+#       return(sigil_output)
+#     }
+# 
+#   # if input is not string, throw error message
+#   } else {
+#     return("Input must be a text string")
+#   }
+# 
+# }
 
-  # if input is not string, throw error message
-  } else {
-    return("Input must be a text string")
-  }
-
-}
-
-test_string = "some text to test"
-split_text <- test_string |>
-  str_remove_all("[aeiou]") |>
-  strsplit("")
-sigil_text <- unique(split_text[[1]]) |>
-  str_extract("[A-z]") |>
-  # randomize order of characters
-  sample() |>
-  # concatenate as uppercase
-  str_to_upper() |>
-  paste(collapse ='')
+# test_string = "some text to test"
+# split_text <- test_string %>%
+#   str_remove_all("[aeiou]") %>%
+#   strsplit("")
+# sigil_text <- unique(split_text[[1]]) %>%
+#   str_extract("[A-z]") |>
+#   # randomize order of characters
+#   sample() %>%
+#   # concatenate as uppercase
+#   str_to_upper() %>%
+#   paste(collapse ='')

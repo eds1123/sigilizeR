@@ -10,30 +10,40 @@
 library(shiny)
 
 # Define UI for application that draws a histogram
-ui <- fluidPage(
-
+app <- shinyApp (
+  ui <- fluidPage(
+    
     # Application title
     titlePanel("SigilzeR App"),
-
+    
     # Sidebar with text input field
     sidebarLayout(
-        sidebarPanel(
-            textInput("sigil_input", "Input Text", width = "100%", placeholder = "Write your intent here")
-        ),
-        
-        # Main panel for outputting results
-        mainPanel(
-            textOutput("sigil_output")
-        )
+      sidebarPanel(
+        textInput("sigil_input", "Input Text", width = "100%", placeholder = "Write your intent here")
+      ),
+      
+      # Main panel for outputting results
+      mainPanel(
+        textOutput("sigil_output")
+      )
     )
-)
-
-# Define server logic required to draw a histogram
-server <- function(input, output) {
+  ),
+  server <- function(input, output) {
     
     source("../sigilize_text.R")
     output$sigil_output <- sigilize_text(input$sigil_input)
-}
+  }
+)
+  
+
+
+# Define server logic required to draw a histogram
+# server = function(input, output) {
+#     
+#     source("../sigilize_text.R")
+#     output$sigil_output <- sigilize_text(input$sigil_input)
+#     
+# }
 
 # Run the application 
-shinyApp(ui = ui, server = server)
+# shinyApp(ui = ui, server = server)
