@@ -28,7 +28,10 @@ app <- shinyApp (
       )
     )
   ),
-  server <- function(input, output) {
+  server <- function(input, output, session) {
+    # What the hell does session do?
+    # Do I need to do anything with render text or something for output?
+    # How do i use a script in an output generator?
     
     source("../sigilize_text.R")
     output$sigil_output <- sigilize_text(input$sigil_input)
